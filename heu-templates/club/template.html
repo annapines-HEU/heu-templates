@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>HEU Club · Конспект · Шаблон</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* ============================================================
+   HEU CLUB · КОНСПЕКТ · А5 · WeasyPrint
+   Отдельный суббренд — БЕЗ CRIMSON!
+   Палитра: navy #0F2432, gold #B78B5A, deep-gold #9A6B3C,
+   кремовый фон контента #F4EFE6, ink #1B2730
+   Обложки/разделители/задник: navy + дамасский паттерн + золотая
+   овальная двойная рамка. Логотип: геральдический щит + «Club»
+   (файлы в ../assets/, извлекаются из Блокнот_клуб.pdf)
+   ============================================================ */
+:root {
+  --navy:#0F2432; --gold:#B78B5A; --deepgold:#9A6B3C;
+  --cream:#F4EFE6; --ink:#1B2730;
+}
+@page { size:148mm 210mm; margin:0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Jost"; font-weight:300; font-size:9pt; color:var(--ink); }
+.page { width:148mm; height:210mm; page-break-after:always; position:relative; overflow:hidden; }
+
+/* ---------- ОБЛОЖКА (navy + дамаск + овал) ---------- */
+.cover { background:var(--navy); color:var(--gold); }
+/* Дамасский паттерн — тайлится svg-плиткой; заменить на реальную из assets */
+.damask { position:absolute; inset:0; opacity:.08;
+  background-image:url("../assets/damask-tile.png"); background-size:28mm; }
+.oval-frame { position:absolute; top:30mm; left:20mm; right:20mm; bottom:55mm;
+  border:1.5px solid var(--gold); border-radius:50%; }
+.oval-frame::after { content:""; position:absolute; inset:2.5mm; border:.5px solid var(--gold); border-radius:50%; }
+.cover .inner { position:absolute; top:30mm; left:20mm; right:20mm; bottom:55mm;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 16mm; }
+.cover .logo { width:22mm; margin-bottom:5mm; } /* ../assets/club-shield.png */
+.cover h1 { font-family:"Cormorant Garamond"; font-weight:500; font-size:20pt; line-height:1.2; }
+.cover .sub { font-family:"Cormorant Garamond"; font-style:italic; font-size:11pt; margin-top:3mm; opacity:.9; }
+.cover-brand { position:absolute; bottom:14mm; left:0; right:0; text-align:center;
+  font-size:7pt; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); }
+
+/* ---------- КОНТЕНТ (кремовый) ---------- */
+.content { background:var(--cream); padding:12mm 13mm 16mm; }
+.runhead { position:absolute; top:7mm; right:13mm; font-size:6.5pt; letter-spacing:.25em; text-transform:uppercase; color:var(--deepgold); }
+.ghost { font-family:"Cormorant Garamond"; font-feature-settings:"lnum" 1; font-size:44pt; color:rgba(183,139,90,.22); line-height:1; }
+h2 { font-family:"Cormorant Garamond"; font-weight:600; font-size:16pt; color:var(--navy); margin:2mm 0 3mm; }
+p { margin-bottom:2.5mm; line-height:1.5; }
+.epigraph { font-family:"Cormorant Garamond"; font-style:italic; font-size:11pt; color:var(--deepgold); margin:3mm 0; }
+.rule { border:none; border-top:1px solid var(--gold); margin:4mm 0; }
+
+/* Карточка кейса: navy с крупной золотой цифрой */
+.case { background:var(--navy); color:#EDE6DA; padding:5mm 6mm; margin:4mm 0; }
+.case .num { font-family:"Cormorant Garamond"; font-feature-settings:"lnum" 1; font-weight:600; font-size:26pt; color:var(--gold); line-height:1; }
+
+/* Сравнение: 2 колонки (крем «плохо» / navy «хорошо») */
+.compare { display:flex; gap:2mm; margin:4mm 0; }
+.compare .bad  { flex:1; background:#EDE6DA; padding:4mm; border:1px solid var(--gold); }
+.compare .good { flex:1; background:var(--navy); color:#EDE6DA; padding:4mm; }
+
+.pfoot { position:absolute; bottom:0; left:0; right:0; display:flex; justify-content:space-between;
+  padding:4mm 13mm; font-size:6.5pt; letter-spacing:.25em; text-transform:uppercase; color:var(--deepgold); }
+</style>
+</head>
+<body>
+
+<!-- ОБЛОЖКА -->
+<div class="page cover">
+  <div class="damask"></div>
+  <div class="oval-frame"></div>
+  <div class="inner">
+    <img class="logo" src="../assets/club-shield.png" alt="">
+    <h1>Название встречи клуба</h1>
+    <div class="sub">Тематическая встреча · дата</div>
+  </div>
+  <div class="cover-brand">HEU CLUB · BY ANNA PINES</div>
+</div>
+
+<!-- КОНТЕНТНАЯ СТРАНИЦА -->
+<div class="page content">
+  <div class="runhead">HEU CLUB</div>
+  <div class="ghost">01</div>
+  <h2>Первый раздел</h2>
+  <div class="epigraph">«Золотой эпиграф — курсивная антиква»</div>
+  <hr class="rule">
+  <p>Основной текст Jost 300 на кремовом фоне.</p>
+  <div class="case"><div class="num">01</div><p>Карточка кейса на navy-фоне с крупной золотой цифрой.</p></div>
+  <div class="compare">
+    <div class="bad"><p><strong>Как не надо:</strong> пример.</p></div>
+    <div class="good"><p><strong>Как надо:</strong> пример.</p></div>
+  </div>
+  <div class="pfoot"><span>HEU CLUB · BY ANNA PINES</span><span>02/12</span></div>
+</div>
+
+</body>
+</html>

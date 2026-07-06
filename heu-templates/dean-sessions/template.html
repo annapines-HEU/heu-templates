@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>HEU · Разбор с деканом · Шаблон</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* ============================================================
+   HEU · КОНСПЕКТ «РАЗБОР С ДЕКАНОМ» · А5 · WeasyPrint
+   Палитра: crimson #9B1D34, фон #EDECEA, карточки #FFFFFF
+   Факультеты D/S/T/E: #2D6A4F / #1E3A5F / #9B1D34 / #B5621E
+   Шрифты: Cormorant Garamond (заголовки) + Jost 300 (текст)
+   БЕЗ ЗОЛОТА. Полоса D/S/T/E на обложке сверху и снизу футера.
+   ============================================================ */
+:root {
+  --crimson:#9B1D34; --bg:#EDECEA; --card:#FFFFFF; --ink:#1a1a1a;
+  --d:#2D6A4F; --s:#1E3A5F; --t:#9B1D34; --e:#B5621E;
+}
+@page { size:148mm 210mm; margin:0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Jost"; font-weight:300; font-size:9pt; color:var(--ink); }
+.page { width:148mm; height:210mm; page-break-after:always; position:relative; overflow:hidden; }
+
+/* Фирменная полоса D/S/T/E */
+.stripe { display:flex; height:3mm; }
+.stripe span { flex:1; }
+.stripe .d{background:var(--d)} .stripe .s{background:var(--s)}
+.stripe .t{background:var(--t)} .stripe .e{background:var(--e)}
+
+/* ---------- ОБЛОЖКА ---------- */
+.cover { background:var(--crimson); color:#fff; display:flex; flex-direction:column; }
+.cover .body { flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding:0 14mm 12mm; }
+.cover .label { font-family:"Jost"; font-weight:400; font-size:8pt; letter-spacing:.25em; text-transform:uppercase; opacity:.85; margin-bottom:4mm; }
+.cover h1 { font-family:"Cormorant Garamond"; font-weight:500; font-size:28pt; line-height:1.15; margin-bottom:3mm; }
+.cover .subtitle { font-family:"Cormorant Garamond"; font-style:italic; font-size:12pt; opacity:.9; margin-bottom:5mm; }
+.cover .meta { font-size:7.5pt; letter-spacing:.12em; text-transform:uppercase; opacity:.8; }
+.cover-footer { background:#1a1a1a; color:#fff; display:flex; justify-content:space-between; padding:4mm 14mm; font-size:7pt; letter-spacing:.2em; text-transform:uppercase; }
+
+/* ---------- КОНТЕНТНАЯ СТРАНИЦА ---------- */
+.content { background:var(--bg); padding:0 0 14mm; }
+.content .head { padding:8mm 12mm 0; }
+.content .counter { position:absolute; top:8mm; right:12mm; font-family:"Cormorant Garamond"; font-feature-settings:"lnum" 1; font-size:10pt; color:var(--crimson); }
+.content .inner { padding:6mm 12mm 0; }
+h2 { font-family:"Cormorant Garamond"; font-weight:600; font-size:16pt; color:var(--ink); margin:5mm 0 3mm; }
+h3 { font-family:"Cormorant Garamond"; font-weight:600; font-size:12pt; margin:4mm 0 2mm; }
+p { margin-bottom:2.5mm; line-height:1.5; }
+
+/* Призрачный номер раздела */
+.ghost { font-family:"Cormorant Garamond"; font-feature-settings:"lnum" 1; font-size:42pt; color:rgba(155,29,52,.14); line-height:1; }
+
+/* Метрики — Cormorant crimson */
+.metric { font-family:"Cormorant Garamond"; font-feature-settings:"lnum" 1; font-weight:600; font-size:20pt; color:var(--crimson); }
+
+/* Цитата */
+blockquote { border-left:3px solid var(--crimson); padding:2mm 0 2mm 5mm; font-family:"Cormorant Garamond"; font-style:italic; font-size:11pt; margin:4mm 0; }
+
+/* Сетка данных: 1px рамка, 1px зазор, белые ячейки */
+.grid { display:flex; flex-wrap:wrap; border:1px solid #d5d3cf; background:#d5d3cf; gap:1px; margin:4mm 0; }
+.grid .cell { background:var(--card); flex:1 1 45%; padding:3mm; }
+
+/* Футер контентных страниц */
+.pfoot { position:absolute; bottom:0; left:0; right:0; background:#1a1a1a; color:#fff; display:flex; justify-content:space-between; padding:3mm 12mm; font-size:6.5pt; letter-spacing:.2em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+
+<!-- ОБЛОЖКА -->
+<div class="page cover">
+  <div class="stripe"><span class="d"></span><span class="s"></span><span class="t"></span><span class="e"></span></div>
+  <div class="body">
+    <div class="label">HEU · 1 КУРС</div>
+    <h1>Название разбора с деканом</h1>
+    <div class="subtitle">Zoom-встреча · Неделя N</div>
+    <div class="meta">ДАТА · ФАКУЛЬТЕТ D · ДЕКАН: ИМЯ ФАМИЛИЯ</div>
+  </div>
+  <div class="cover-footer"><span>HEU · BY ANNA PINES</span><span>2026</span></div>
+  <div class="stripe"><span class="d"></span><span class="s"></span><span class="t"></span><span class="e"></span></div>
+</div>
+
+<!-- КОНТЕНТНАЯ СТРАНИЦА -->
+<div class="page content">
+  <div class="head">
+    <div class="stripe"><span class="d"></span><span class="s"></span><span class="t"></span><span class="e"></span></div>
+  </div>
+  <div class="counter">02/12</div>
+  <div class="inner">
+    <div class="ghost">01</div>
+    <h2>Первый раздел</h2>
+    <p>Пример текста Jost 300, 9pt. Основной текст конспекта.</p>
+    <blockquote>Пример цитаты декана — курсивная антиква с бордовой линией слева.</blockquote>
+    <div class="grid">
+      <div class="cell"><div class="metric">42%</div><p>подпись к метрике</p></div>
+      <div class="cell"><div class="metric">6 000 ₽</div><p>вторая метрика</p></div>
+    </div>
+  </div>
+  <div class="pfoot"><span>HEU · BY ANNA PINES</span><span>2026</span></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>HEU · Домашнее задание · Шаблон</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* ============================================================
+   HEU · ДОМАШНЕЕ ЗАДАНИЕ (серия №1–7) · WeasyPrint
+   Обложка: тёмная #0c0213, лого сверху по центру,
+   заголовок с каллиграфической «Д» (картинка ../assets/letter-d.png),
+   таблица снизу: 0N | HAIR EXPERT UNIVERSITY | BY ANNA PINES
+   Стр. 2 — пустая тёмная. Контент: белый, Cormorant Garamond
+   заголовки + Jost 300 9pt. Задник: тёмный, лого слева внизу, год справа.
+   ============================================================ */
+:root { --dark:#0c0213; --crimson:#9B1D34; --ink:#1a1a1a; }
+@page { size:148mm 210mm; margin:0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Jost"; font-weight:300; font-size:9pt; color:var(--ink); }
+.page { width:148mm; height:210mm; page-break-after:always; position:relative; overflow:hidden; }
+
+/* ---------- ОБЛОЖКА ---------- */
+.cover { background:var(--dark); color:#fff; text-align:center; }
+.cover .logo { width:20mm; margin-top:16mm; } /* ../assets/heu-crest-white.png */
+.cover .title-wrap { margin-top:22mm; }
+.cover .letter-d { height:34mm; vertical-align:middle; } /* ../assets/letter-d.png */
+.cover h1 { font-family:"Cormorant Garamond"; font-weight:500; font-size:26pt; display:inline; vertical-align:middle; margin-left:2mm; }
+.cover .num { margin-top:8mm; font-family:"Cormorant Garamond"; font-feature-settings:"lnum" 1; font-size:14pt; }
+.cover-table { position:absolute; bottom:0; left:0; right:0; display:flex; border-top:1px solid rgba(255,255,255,.4);
+  font-size:7pt; letter-spacing:.2em; text-transform:uppercase; }
+.cover-table div { padding:4mm 6mm; border-right:1px solid rgba(255,255,255,.4); }
+.cover-table div:last-child { border-right:none; flex:1; text-align:right; }
+
+.blank-dark { background:var(--dark); }
+
+/* ---------- КОНТЕНТ ---------- */
+.content { background:#fff; padding:14mm 14mm 18mm; }
+h2 { font-family:"Cormorant Garamond"; font-weight:600; font-size:16pt; margin-bottom:3mm; }
+h3 { font-family:"Cormorant Garamond"; font-weight:600; font-size:12pt; margin:4mm 0 2mm; }
+p { line-height:1.55; margin-bottom:2.5mm; }
+.task { border:1px solid #ddd; padding:4mm 5mm; margin:4mm 0; }
+.task .task-num { font-family:"Cormorant Garamond"; font-feature-settings:"lnum" 1; font-weight:600; font-size:18pt; color:var(--crimson); }
+.lines { margin-top:3mm; }
+.lines div { border-bottom:.5px solid #bbb; height:7mm; }
+.pfoot { position:absolute; bottom:0; left:0; right:0; display:flex; justify-content:space-between;
+  padding:5mm 14mm; font-size:6.5pt; letter-spacing:.25em; text-transform:uppercase; color:#888; }
+
+/* ---------- ЗАДНИК ---------- */
+.back { background:var(--dark); color:#fff; }
+.back .logo { position:absolute; bottom:14mm; left:14mm; width:16mm; }
+.back .year { position:absolute; bottom:14mm; right:14mm; font-size:8pt; }
+</style>
+</head>
+<body>
+
+<!-- ОБЛОЖКА -->
+<div class="page cover">
+  <img class="logo" src="../assets/heu-crest-white.png" alt="">
+  <div class="title-wrap">
+    <img class="letter-d" src="../assets/letter-d.png" alt="Д"><h1>омашнее задание</h1>
+  </div>
+  <div class="num">№ 1</div>
+  <div class="cover-table"><div>01</div><div>HAIR EXPERT UNIVERSITY</div><div>BY ANNA PINES</div></div>
+</div>
+
+<!-- ПУСТАЯ ТЁМНАЯ СТР. 2 -->
+<div class="page blank-dark"></div>
+
+<!-- КОНТЕНТ -->
+<div class="page content">
+  <h2>Тема задания</h2>
+  <p>Вводный текст задания, Jost 300, 9pt.</p>
+  <div class="task">
+    <div class="task-num">1</div>
+    <p>Формулировка задания.</p>
+    <div class="lines"><div></div><div></div><div></div></div>
+  </div>
+  <div class="pfoot"><span>HAIR EXPERT UNIVERSITY · BY ANNA PINES</span><span>3</span></div>
+</div>
+
+<!-- ЗАДНИК -->
+<div class="page back">
+  <img class="logo" src="../assets/heu-crest-white.png" alt="">
+  <div class="year">2026</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Геометрия формы · Мария Усова · Шаблон</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+/* ============================================================
+   МАРИЯ УСОВА · «ГЕОМЕТРИЯ ФОРМЫ» · 154×216 мм · WeasyPrint
+   Монохром, БЕЗ CRIMSON. Обложка тёмная #0c0213.
+   Шрифты: Cormorant Display SemiBold (НЕ Garamond!) + Raleway Light
+   Подпись: BY MARIA USOVA (без подписи Анны)
+   ============================================================ */
+:root { --dark:#0c0213; --ink:#1a1a1a; --gray:#777; --lightbg:#f2f2f2; }
+@page { size:154mm 216mm; margin:0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Raleway"; font-weight:300; font-size:9pt; color:var(--ink); }
+.page { width:154mm; height:216mm; page-break-after:always; position:relative; overflow:hidden; }
+
+/* ---------- ОБЛОЖКА ---------- */
+.cover { background:var(--dark); color:#fff; display:flex; flex-direction:column; align-items:center; text-align:center; }
+.cover .crest { width:18mm; margin-top:18mm; } /* ../assets/heu-crest-white.png */
+.cover h1 { font-family:"Cormorant Display"; font-weight:600; font-size:54pt; text-transform:uppercase; line-height:1.05; margin-top:14mm; letter-spacing:.02em; }
+.cover .oval { display:inline-block; border:1px solid #fff; border-radius:50%; padding:2.5mm 10mm; margin-top:8mm;
+  font-family:"Raleway"; font-size:8pt; letter-spacing:.25em; text-transform:uppercase; }
+.cover .trainer { margin-top:6mm; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; opacity:.85; }
+.cover-table { position:absolute; bottom:0; left:0; right:0; display:flex; border-top:1px solid rgba(255,255,255,.4);
+  font-size:7pt; letter-spacing:.2em; text-transform:uppercase; }
+.cover-table div { padding:4mm 6mm; border-right:1px solid rgba(255,255,255,.4); }
+.cover-table div:last-child { border-right:none; flex:1; text-align:right; }
+
+/* Страница 2: пустая тёмная */
+.blank-dark { background:var(--dark); }
+
+/* ---------- КОНТЕНТ ---------- */
+.content { background:#fff; padding:14mm 15mm 18mm; }
+.kicker { font-family:"Raleway"; font-weight:400; font-size:7pt; letter-spacing:.3em; text-transform:uppercase; color:var(--gray); margin-bottom:2mm; }
+h2 { font-family:"Cormorant Display"; font-weight:600; font-size:18pt; margin-bottom:4mm; }
+p { line-height:1.6; margin-bottom:2.5mm; }
+
+/* Таблица с тонкими линейками, Cormorant в 1-й колонке */
+table { width:100%; border-collapse:collapse; margin:4mm 0; }
+td, th { border-bottom:.5px solid #ccc; padding:2mm 2mm 2mm 0; text-align:left; font-weight:300; }
+td:first-child { font-family:"Cormorant Display"; font-weight:600; font-size:11pt; }
+
+/* Заметка на сером */
+.note { background:var(--lightbg); padding:4mm 5mm; margin:4mm 0; }
+
+/* Чекбоксы финального раздела */
+.check { display:flex; gap:3mm; margin-bottom:2.5mm; }
+.check::before { content:""; width:3.5mm; height:3.5mm; border:1px solid var(--ink); flex-shrink:0; margin-top:.5mm; }
+
+.pfoot { position:absolute; bottom:0; left:0; right:0; display:flex; justify-content:space-between;
+  padding:5mm 15mm; font-size:6.5pt; letter-spacing:.25em; text-transform:uppercase; color:var(--gray); }
+
+/* ---------- ЗАДНЯЯ ОБЛОЖКА ---------- */
+.back { background:var(--dark); color:#fff; }
+.back .lockup { position:absolute; bottom:14mm; left:15mm; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; }
+.back .year { position:absolute; bottom:14mm; right:15mm; font-size:8pt; }
+</style>
+</head>
+<body>
+
+<!-- ОБЛОЖКА -->
+<div class="page cover">
+  <img class="crest" src="../assets/heu-crest-white.png" alt="">
+  <h1>Геометрия<br>формы</h1>
+  <div class="oval">Название модуля</div>
+  <div class="trainer">Тренинг Марии Усовой</div>
+  <div class="cover-table"><div>01</div><div>HAIR EXPERT UNIVERSITY</div><div>BY MARIA USOVA</div></div>
+</div>
+
+<!-- ПУСТАЯ ТЁМНАЯ СТР. 2 -->
+<div class="page blank-dark"></div>
+
+<!-- КОНТЕНТ (нумерация с 3) -->
+<div class="page content">
+  <div class="kicker">Раздел первый</div>
+  <h2>Заголовок раздела</h2>
+  <p>Основной текст Raleway Light.</p>
+  <table>
+    <tr><td>Форма</td><td>Описание</td><td>Угол</td></tr>
+    <tr><td>Квадрат</td><td>пример строки</td><td>0°</td></tr>
+  </table>
+  <div class="note"><p>Заметка на сером фоне.</p></div>
+  <div class="check"><p>Пункт чек-листа финального раздела.</p></div>
+  <div class="pfoot"><span>HAIR EXPERT UNIVERSITY</span><span>3</span></div>
+</div>
+
+<!-- ЗАДНЯЯ ОБЛОЖКА -->
+<div class="page back">
+  <div class="lockup">HAIR EXPERT UNIVERSITY · ГЕОМЕТРИЯ ФОРМЫ</div>
+  <div class="year">2026</div>
+</div>
+
+</body>
+</html>

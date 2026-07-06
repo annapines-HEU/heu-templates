@@ -1,0 +1,26 @@
+/* HEU · Общее подключение шрифтов (склеенные latin+cyrillic, для WeasyPrint) */
+/* Подключать из шаблона: <link rel="stylesheet" href="../fonts/fonts.css"> */
+
+@font-face { font-family:"Cormorant Garamond"; font-weight:400; font-style:normal; src:url("CormorantGaramond-400.woff2") format("woff2"); }
+@font-face { font-family:"Cormorant Garamond"; font-weight:400; font-style:italic; src:url("CormorantGaramond-400Italic.woff2") format("woff2"); }
+@font-face { font-family:"Cormorant Garamond"; font-weight:500; font-style:normal; src:url("CormorantGaramond-500.woff2") format("woff2"); }
+@font-face { font-family:"Cormorant Garamond"; font-weight:500; font-style:italic; src:url("CormorantGaramond-500Italic.woff2") format("woff2"); }
+@font-face { font-family:"Cormorant Garamond"; font-weight:600; font-style:normal; src:url("CormorantGaramond-600.woff2") format("woff2"); }
+@font-face { font-family:"Cormorant Garamond"; font-weight:600; font-style:italic; src:url("CormorantGaramond-600Italic.woff2") format("woff2"); }
+
+/* Cormorant (используется как Display-начертание в конспектах Марии Усовой) */
+@font-face { font-family:"Cormorant Display"; font-weight:600; font-style:normal; src:url("CormorantDisplay-600.woff2") format("woff2"); }
+
+@font-face { font-family:"Jost"; font-weight:300; font-style:normal; src:url("Jost-300.woff2") format("woff2"); }
+@font-face { font-family:"Jost"; font-weight:300; font-style:italic; src:url("Jost-300Italic.woff2") format("woff2"); }
+@font-face { font-family:"Jost"; font-weight:400; font-style:normal; src:url("Jost-400.woff2") format("woff2"); }
+@font-face { font-family:"Jost"; font-weight:500; font-style:normal; src:url("Jost-500.woff2") format("woff2"); }
+
+@font-face { font-family:"Raleway"; font-weight:300; font-style:normal; src:url("Raleway-300.woff2") format("woff2"); }
+@font-face { font-family:"Raleway"; font-weight:400; font-style:normal; src:url("Raleway-400.woff2") format("woff2"); }
+@font-face { font-family:"Raleway"; font-weight:500; font-style:normal; src:url("Raleway-500.woff2") format("woff2"); }
+
+/* ВАЖНО: у Cormorant Garamond цифры по умолчанию «старостильные» (пляшущие).
+   Для всех номеров разделов, крупных цифр и метрик добавлять:
+   font-feature-settings: "lnum" 1;  */
+.lnum { font-feature-settings: "lnum" 1; }
