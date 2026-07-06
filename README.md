@@ -25,6 +25,10 @@ prague-mastermind/
   certificates.pdf        Сертификаты участников
   guest-certificate.pdf   Сертификат гостя
   awards.pdf              Награды (в кривых)
+prague-conference/        Айдентика конференции International Mastermind & Panel Discussion (Прага 2026)
+  logo/                   Логотип мероприятия (svg + png @2x)
+  slides/                 7 слайдов концепции фирменного стиля (png 1920×1080)
+  README.md               Концепция, типографика, палитра — выгружено из Figma
 fonts/
   gilroy/                 Gilroy Regular / Medium / Semibold (ttf)
 ```
