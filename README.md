@@ -13,9 +13,21 @@ heu/                      Основной бренд Hair Expert University
   patterns/               Фирменные паттерны D, E, S, T и University — svg + png 1080×1920
   brand-elements-part1.pdf  Сводный PDF элементов фирменного стиля (стр. 1–9)
   brand-elements-part2.pdf  Сводный PDF элементов фирменного стиля (стр. 10–12)
-mba/
-  logo/                   Логотипы MBA — HEU (main / center / mini / symbol; light / dark / bw) — svg + png
-university-club/
+mba/                      Материалы MBA — подробнее в mba/README.md
+  logo/                   Логотипы MBA (main / center / mini / symbol; light / dark / bw) — svg + png
+  concept/                Концепция айдентики MBA (11 слайдов)
+  banners/                Баннеры и посты (91)
+  guides/teaching/        Гайд по преподаванию (121 стр.)
+  program/                Карточки программы курса + элементы и иконки
+  schedule/               Расписание курса (pdf + png)
+  style/                  Паттерн, шрифтовые стили, варианты логотипа
+university-club/          Дизайн клуба — подробнее в university-club/README.md
+  logo/                   Герб клуба (4 варианта)
+  elements/               Графические элементы (А→Б, рамки, плашки)
+  templates/              Шаблоны постов (недели, расписания, поздравления и др.)
+  cards/teams/            Карточки команд клубной игры
+  cards/members/          Именные карточки участниц
+  stories/                Сторис 1080×1920 (png)
   banners/                Баннеры клуба (png)
   pattern.pdf             Паттерн клуба
   club-cards.pdf          Карты клуба (финальный макет)
@@ -25,6 +37,7 @@ prague-mastermind/
   certificates.pdf        Сертификаты участников
   guest-certificate.pdf   Сертификат гостя
   awards.pdf              Награды (в кривых)
+  sign-logo.pdf           Лого для таблички
 prague-conference/        Айдентика конференции International Mastermind & Panel Discussion (Прага 2026)
   logo/                   Логотип мероприятия (svg + png @2x)
   slides/                 7 слайдов концепции фирменного стиля (png 1920×1080)
